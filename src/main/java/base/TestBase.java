@@ -9,6 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 
 import util.Testutil;
 
@@ -42,15 +43,10 @@ public class TestBase {
 		
 		driver.get(prop.getProperty("url"));
 	}
+	public static void dropdown(WebElement xpath, String value)
+	{
+		Select s =new Select(xpath);
+		s.selectByVisibleText(value);
+	}
 	
-	public static void click(String xpath)
-	{
-		WebElement click = driver.findElement(By.xpath(xpath));
-		click.click();
-	}
-	public static void text(String xpath,String value)
-	{
-		WebElement text = driver.findElement(By.xpath(xpath));
-		text.sendKeys(value);
-	}
 }

@@ -6,8 +6,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import base.TestBase;
-import pages.LoginPage;
-import pages.PlantDashboard;
+import homePages.LoginPage;
+import homePages.PlantDashboard;
 
 public class PlantDashboardTest extends TestBase {
 

@@ -7,10 +7,10 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import base.TestBase;
-import pages.LoginPage;
-import pages.MachineDashboard;
-import pages.PlantDashboard;
-import pages.ZoneDashboard;
+import homePages.LoginPage;
+import homePages.MachineDashboard;
+import homePages.PlantDashboard;
+import homePages.ZoneDashboard;
 
 public class MachineDashboardTest extends TestBase {
 

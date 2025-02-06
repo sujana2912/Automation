@@ -1,4 +1,4 @@
-package pages;
+package homePages;
 
 public class Analyticspage {
 

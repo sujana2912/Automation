@@ -2,24 +2,41 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-02-03T18:42:48 IST" name="Default suite" finished-at="2025-02-03T18:43:09 IST" duration-ms="21067">
+  <suite started-at="2025-02-06T15:30:58 SGT" name="Default suite" finished-at="2025-02-06T15:31:23 SGT" duration-ms="25096">
     <groups>
     </groups>
-    <test started-at="2025-02-03T18:42:48 IST" name="Default test" finished-at="2025-02-03T18:43:09 IST" duration-ms="21067">
-      <class name="testcases.MachineDashboardTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.MachineDashboardTest@7161d8d1]" started-at="2025-02-03T18:42:48 IST" name="setup" finished-at="2025-02-03T18:43:06 IST" duration-ms="18558" status="PASS">
+    <test started-at="2025-02-06T15:30:58 SGT" name="Default test" finished-at="2025-02-06T15:31:23 SGT" duration-ms="25096">
+      <class name="testcases.ZoneConfigPageTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.ZoneConfigPageTest@606e4010]" started-at="2025-02-06T15:31:00 SGT" name="setup" finished-at="2025-02-06T15:31:11 SGT" duration-ms="11049" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="gnattchartTest()[pri:0, instance:testcases.MachineDashboardTest@7161d8d1]" started-at="2025-02-03T18:43:06 IST" name="gnattchartTest" finished-at="2025-02-03T18:43:08 IST" duration-ms="1893" status="PASS">
+        <test-method signature="newuserTest(java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:testcases.ZoneConfigPageTest@606e4010]" started-at="2025-02-06T15:31:11 SGT" name="newuserTest" data-provider="testdatafile" finished-at="2025-02-06T15:31:23 SGT" duration-ms="12277" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Zone1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[ plant1 ]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Zone-1]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- gnattchartTest -->
-        <test-method is-config="true" signature="quit()[pri:0, instance:testcases.MachineDashboardTest@7161d8d1]" started-at="2025-02-03T18:43:08 IST" name="quit" finished-at="2025-02-03T18:43:09 IST" duration-ms="511" status="PASS">
+        </test-method> <!-- newuserTest -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:testcases.ZoneConfigPageTest@606e4010]" started-at="2025-02-06T15:31:23 SGT" name="teardown" finished-at="2025-02-06T15:31:23 SGT" duration-ms="340" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- quit -->
-      </class> <!-- testcases.MachineDashboardTest -->
+        </test-method> <!-- teardown -->
+      </class> <!-- testcases.ZoneConfigPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
