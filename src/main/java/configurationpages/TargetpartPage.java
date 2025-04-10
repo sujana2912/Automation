@@ -106,6 +106,7 @@ public class TargetpartPage extends TestBase {
         for (int i = 0; i < clickedit.size(); i++) {
             // Step 1: Click edit for row i
             clickedit.get(i).click();
+           System.out.println("hi");
  
             // Step 2: Wait for that row's input fields to appear
             wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//input[@id='userA']")));
