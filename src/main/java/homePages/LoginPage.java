@@ -25,7 +25,7 @@ public class LoginPage extends TestBase {
 		PageFactory.initElements(driver, this);
 		
 	}
-
+	
 	public String validatetitle()
 	{
 		return driver.getTitle();
@@ -35,6 +35,7 @@ public class LoginPage extends TestBase {
 	{
 		return logo.isDisplayed();
 	}
+	
 	public PlantDashboard login(String un,String pwd)
 	{
 		username.sendKeys(un);

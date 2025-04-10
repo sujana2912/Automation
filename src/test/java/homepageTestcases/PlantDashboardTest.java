@@ -1,4 +1,4 @@
-package testcases;
+package homepageTestcases;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;

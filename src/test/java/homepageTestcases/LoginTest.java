@@ -1,14 +1,17 @@
-package testcases;
+package homepageTestcases;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import base.TestBase;
 import homePages.LoginPage;
 import homePages.PlantDashboard;
 
+
+@Listeners(listners.TestListener.class)
 public class LoginTest extends TestBase{
 	LoginPage lp;
 	PlantDashboard pd;
@@ -16,8 +19,7 @@ public class LoginTest extends TestBase{
 	public LoginTest()
 	{
 		super();
-	}
-	
+	}	
 	
 	@BeforeMethod
 	public void setup()
@@ -47,7 +49,7 @@ public class LoginTest extends TestBase{
 	}
 	
 	@AfterMethod
-	public void close()
+	public void tearsdown()
 	{
 		driver.quit();
 	}

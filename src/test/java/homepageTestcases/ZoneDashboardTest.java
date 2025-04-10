@@ -1,25 +1,26 @@
-package testcases;
+package homepageTestcases;
 
 import java.time.Duration;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import base.TestBase;
 import homePages.LoginPage;
-import homePages.MachineDashboard;
 import homePages.PlantDashboard;
 import homePages.ZoneDashboard;
 
-public class MachineDashboardTest extends TestBase {
-
+public class ZoneDashboardTest extends TestBase
+{
 	LoginPage lp;
 	PlantDashboard pd;
 	ZoneDashboard zd;
-	MachineDashboard md;
 
-	public MachineDashboardTest()
+	public ZoneDashboardTest()
 	{
 		super();
 	}
@@ -32,16 +33,24 @@ public class MachineDashboardTest extends TestBase {
 		pd = lp.login(prop.getProperty("username"), prop.getProperty("password"));
 		pd.verifyzoneclick();
 		zd = new ZoneDashboard();
-		zd.clickmachTest();
-		md = new MachineDashboard();
 	}
 
-	@Test
-	public void gnattchartTest()
+//	@Test(priority = 1)
+//	public void verifypd()
+//	{
+//		Assert.assertEquals(pd.pdtitle(),"Plant-1","not matching the title");
+//	}
+
+	@Test(priority=1)
+	public void verifypatternsTest()
 	{
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		md.gnattchartbar();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		zd.listlinepatternsTest();
+	}
+	
+	@Test(priority=2)
+	public void machineclickTest()
+	{
+		zd.clickmachTest();
 	}
 	
 	@AfterMethod

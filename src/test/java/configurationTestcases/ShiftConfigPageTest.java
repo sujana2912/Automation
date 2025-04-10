@@ -1,6 +1,4 @@
-package testcases;
-
-import java.time.Duration;
+package configurationTestcases;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -13,20 +11,19 @@ import homePages.LoginPage;
 import homePages.PlantDashboard;
 import util.Testutil;
 
-public class UserConfigTest extends TestBase {
+public class ShiftConfigPageTest extends TestBase {
 
 	LoginPage lp;
 	PlantDashboard pd;
 	ConfigurationPage cp;
-	UserConfigPage ucp;
-	String sheetname="UserConfig";
-	Testutil testutil;
-
-	public UserConfigTest()
+	ShiftConfigPage scp;
+	String sheetname="ShiftConfig";
+	
+	public ShiftConfigPageTest()
 	{
 		super();
 	}
-
+	
 	@BeforeMethod
 	public void setup()
 	{
@@ -34,17 +31,9 @@ public class UserConfigTest extends TestBase {
 		lp=new LoginPage();
 		pd=lp.login(prop.getProperty("username"),prop.getProperty("password"));
 		cp=new ConfigurationPage();
-		ucp=new UserConfigPage();
+		scp = new ShiftConfigPage();
+		
 	}
-
-	
-//	@Test(priority=1)
-//	public void clickadduserTest()
-//	{
-//		pd.clickconfigpage();
-//		cp.clickuser();
-//		ucp.clickadduser();
-//	}
 	
 	@DataProvider
 	public Object[][] testdatafile()
@@ -54,21 +43,20 @@ public class UserConfigTest extends TestBase {
 	}
 	
 	@Test(priority=1,dataProvider = "testdatafile")
-	public void newuserTest(String UserId,String Username, String EmailId, String Role, String MobileNo,String Password)
+	public void newuserTest(String ShiftId,String ShiftName, String StartTime,String EndTime,String DowntimeDuration,String DowntimeStart)
 	{
 		pd.clickconfigpage();
 		cp.clickrole();
-		cp.clickuser();
-		ucp.clickadduser();
-		ucp.createuser(UserId,Username,EmailId,Role,MobileNo,Password);
+		cp.clickshift();
+		
+		scp.createShift(ShiftId, ShiftName, StartTime, EndTime, DowntimeDuration, DowntimeStart);
+		
 		System.out.println("Added");
 	}
-
+	
 	@AfterMethod
 	public void teardown()
 	{
 		driver.quit();
 	}
-
-
 }

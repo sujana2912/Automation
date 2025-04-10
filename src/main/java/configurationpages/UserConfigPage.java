@@ -1,11 +1,13 @@
 package configurationpages;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import base.TestBase;
+import net.bytebuddy.utility.RandomString;
 
 public class UserConfigPage extends TestBase{
 	
@@ -44,13 +46,14 @@ public class UserConfigPage extends TestBase{
 		useraddconfig.click();
 	}
 	
-	public ZoneConfigPage createuser(String uid,String Uname, String EmailId, String role, String mNo,String pwd)
+	public ZoneConfigPage createuser(String uid,String Uname, String EmailId, String role,String pwd)
 	{
 		userid.click();
 		username.sendKeys(uid);
 		useremail.sendKeys(EmailId);
 		Select s =new Select(userrole);
 		s.selectByVisibleText(role);
+		String mNo=RandomStringUtils.randomNumeric(10);
 		usermobileno.sendKeys(mNo);
 		userpwd.sendKeys(pwd);
 		savebtn.click();

@@ -9,8 +9,12 @@ import org.apache.commons.io.FileUtils;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 import base.TestBase;
 
@@ -70,11 +74,30 @@ public class Testutil extends TestBase {
 		return data;
 	}
 	
-	public static void takeScreenshotAtEndOfTest() throws IOException {
-		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		String currentDir = System.getProperty("user.dir");
-		FileUtils.copyFile(scrFile, new File(currentDir + "/screenshots/" + System.currentTimeMillis() + ".png"));
+	public static void takeScreenshotAtEndOfTest(WebDriver driver, String testName) throws IOException {
+        File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        String currentDir = System.getProperty("user.dir"); // Gets project directory
+        String screenshotPath = currentDir + "/screenshots/" + testName + "_" + System.currentTimeMillis() + ".png";
+        FileUtils.copyFile(scrFile, new File(screenshotPath));
+        System.out.println("Screenshot saved: " + screenshotPath);
+    }
+	
+	public static void click(String xpath)
+	{
+		WebElement click = driver.findElement(By.xpath(xpath));
+		click.click();
 	}
-
-
+	
+	public static void text(String xpath,String value)
+	{
+		WebElement text = driver.findElement(By.xpath(xpath));
+		text.sendKeys(value);
+	}
+	
+	public static void dropdown(WebElement xpath, String value)
+	{
+		Select s =new Select(xpath);
+		s.selectByVisibleText(value);
+	
+	}
 }

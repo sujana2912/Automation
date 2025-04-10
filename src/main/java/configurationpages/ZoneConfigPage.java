@@ -6,6 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import base.TestBase;
+import util.Testutil;
 
 public class ZoneConfigPage extends TestBase {
 	
@@ -31,18 +32,14 @@ public class ZoneConfigPage extends TestBase {
 	
 	public ShiftConfigPage createzone(String zid,String pname,String zname)
 	{
+		
 		addnewzone.click();
-		dropdown(zoneid, zid);
-		dropdown(plantname, pname);
+		Testutil.dropdown(zoneid, zid);
+		Testutil.dropdown(plantname, pname);
 		zonename.sendKeys(zname);
 		zoneaddbtn.click();
 		
 		return new ShiftConfigPage();
-	}
-	public static void dropdown(WebElement xpath, String value)
-	{
-		Select s =new Select(xpath);
-		s.selectByVisibleText(value);
 	}
 
 

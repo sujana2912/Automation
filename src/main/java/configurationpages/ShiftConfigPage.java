@@ -12,25 +12,34 @@ public class ShiftConfigPage extends TestBase{
 	@FindBy(xpath="//i[@class='fas fa-plus-circle']")
 	WebElement addnewshift;
 	
-	@FindBy(xpath="//input[@id='name']")
+	@FindBy(xpath="//input[@id='validationCustom01']")
 	WebElement shiftid;
 	
-	@FindBy(xpath="input[placeholder='Shift Name']")
+	@FindBy(xpath="//input[@id='validationCustom02']")
 	WebElement shiftname;
 	
-	@FindBy(xpath="//input[@class='form-control form-control-sm ng-untouched ng-pristine ng-star-inserted']")
+	@FindBy(xpath="//select[@id='validationCustom03']")
 	WebElement shiftstarttime;
 	
-	@FindBy(xpath="//select[@name='endTime']")
+	@FindBy(xpath="//select[@id='validationCustom04']")
 	WebElement shiftendtime;
 	
-	@FindBy(xpath="//select[@name='plannedDownTime']")
-	WebElement downtimeduration;
-	
-	@FindBy(xpath="//select[@name='startplannedDownTime']")
-	WebElement startdowntime;
+	@FindBy(xpath="//label[@for='invalidCheck']")
+	WebElement checktick;
 	
 	@FindBy(xpath="//button[normalize-space()='Add']")
+	WebElement adddowntimebtn;
+	
+	@FindBy(xpath="//select[@id='validationCustom06']")
+	WebElement downtimeduration;
+	
+	@FindBy(xpath="//input[@id='validationCustom05']")
+	WebElement downtimename;
+	
+	@FindBy(xpath="//select[@id='validationCustom07']")
+	WebElement startdowntime;
+	
+	@FindBy(xpath="//button[normalize-space()='Save']")
 	WebElement shiftaddbtn;
 	
 	public ShiftConfigPage()
@@ -38,21 +47,27 @@ public class ShiftConfigPage extends TestBase{
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void createShift(String sid,String sname,String sstarttime,String sendtime,String dtduration,String dtstart)
+	public MachineConfiguration createShift(String sid,String sname,String sstarttime,String sendtime,String dtduration,String dtstart)
 	{
 		addnewshift.click();
 		shiftid.sendKeys(sid);
 		shiftname.sendKeys(sname);
 		dropdown(shiftstarttime, sstarttime);
 		dropdown(shiftendtime, sendtime);
+		checktick.click();
+		adddowntimebtn.click();
+		downtimename.sendKeys("D1");
 		dropdown(downtimeduration, dtduration);
 		dropdown(startdowntime, dtstart);
 		shiftaddbtn.click();
+		
+		return new MachineConfiguration();
 	}
 	
-	public static void dropdown(WebElement xpath, String value)
-	{
-		Select s =new Select(xpath);
-		s.selectByVisibleText(value);
-	}
+	
+//	public static void dropdown(WebElement xpath, String value)
+//	{
+//		Select s =new Select(xpath);
+//		s.selectByVisibleText(value);
+//	}
 }

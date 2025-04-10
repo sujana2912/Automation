@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import base.TestBase;
+import configurationpages.ConfigurationPage;
 import util.Testutil;
 
 public class PlantDashboard extends TestBase {
@@ -37,12 +38,11 @@ public class PlantDashboard extends TestBase {
 		return new ZoneDashboard();
 	}
 	
-	public void clickconfigpage()
+	public  ConfigurationPage clickconfigpage()
 	{
 		configpage.click();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Testutil.IMPLICIT_WAIT));
-		//return new ConfigurationPage();
+		return new ConfigurationPage();
 	}
-	
 	
 }

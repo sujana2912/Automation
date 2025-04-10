@@ -1,30 +1,30 @@
-package testcases;
+package configurationTestcases;
 
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import base.TestBase;
-import configurationpages.ZoneConfigPage;
+import configurationpages.ConfigurationPage;
+import configurationpages.LoggerPage;
+import configurationpages.MachineConfiguration;
+import configurationpages.TargetpartPage;
 import homePages.LoginPage;
 import homePages.PlantDashboard;
-import configurationpages.*;
 import util.Testutil;
 
-public class ZoneConfigPageTest extends TestBase {
+public class TargetpartPageTest extends TestBase{
 
 	LoginPage lp;
 	PlantDashboard pd;
 	ConfigurationPage cp;
-	ZoneConfigPage zcp;
-	String sheetname="ZoneConfig";
-
-	public ZoneConfigPageTest()
-	{
+	TargetpartPage tpp;
+	String sheetname="TargetPartConfig";
+	
+	public TargetpartPageTest() {
 		super();
 	}
-
+	
 	@BeforeMethod
 	public void setup()
 	{
@@ -32,32 +32,24 @@ public class ZoneConfigPageTest extends TestBase {
 		lp=new LoginPage();
 		pd=lp.login(prop.getProperty("username"),prop.getProperty("password"));
 		cp=new ConfigurationPage();
-		zcp=new ZoneConfigPage();
+		tpp = new TargetpartPage();
 	}
-
+	
 	@DataProvider
 	public Object[][] testdatafile()
 	{
 		Object[][] data = Testutil.getTestData(sheetname);
 		return data;
 	}
-
-	@Test(priority=1,dataProvider = "testdatafile")
-	public void newuserTest(String ZoneId,String PlantName, String ZoneName)
+	
+	@Test(dataProvider="testdatafile")
+	public void addtargetpartTest(String part1,String part2, String part3) throws InterruptedException
 	{
 		pd.clickconfigpage();
 		cp.clickrole();
-		cp.clickzone();
-
-		zcp.createzone(ZoneId, PlantName, ZoneName);
-
-		System.out.println("Added");
+		cp.clicktargetpart();
+		tpp.addtargetpart(part1, part2, part3);
+		
+		System.out.println("Targetpart is added");
 	}
-
-	@AfterMethod
-	public void teardown()
-	{
-		driver.quit();
-	}
-
 }

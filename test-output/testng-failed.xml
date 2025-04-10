@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testcases.ZoneConfigPageTest">
+      <class name="configurationTestcases.TargetpartPageTest">
         <methods>
+          <include name="addtargetpartTest" invocation-numbers="0 1 2"/>
           <include name="setup"/>
-          <include name="newuserTest" invocation-numbers="0"/>
         </methods>
-      </class> <!-- testcases.ZoneConfigPageTest -->
+      </class> <!-- configurationTestcases.TargetpartPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
