@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -73,7 +75,71 @@ public class Testutil extends TestBase {
 
 		return data;
 	}
-	
+	public static int getShiftCountFromExcel() {
+        FileInputStream file = null;
+        int shiftCount = 0;
+
+        try {
+            file = new FileInputStream(TestDataSheet_path);
+            book = WorkbookFactory.create(file);
+            sheet = book.getSheet("ShiftConfig"); // Sheet name from Excel
+
+            if (sheet == null) {
+                System.err.println("Sheet 'ShiftConfig' not found.");
+                return 0;
+            }
+
+            shiftCount = sheet.getLastRowNum()-1; // excludes header
+            System.out.println("Shift count from Excel: " + shiftCount);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (file != null) {
+                    file.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return shiftCount;
+    }
+	public static List<List<String>> getTargetPartDataFromExcel() {
+	    List<List<String>> targetPartData = new ArrayList<>();
+	    FileInputStream file = null;
+	    try {
+	        file = new FileInputStream(TestDataSheet_path);
+	        book = WorkbookFactory.create(file);
+	        sheet = book.getSheet("TargetPartConfig");
+
+	        if (sheet == null) {
+	            System.err.println("TargetPart sheet not found!");
+	            return null;
+	        }
+
+	        for (int i = 1; i <= sheet.getLastRowNum(); i++) {
+	            List<String> rowData = new ArrayList<>();
+	            for (int j = 1; j < sheet.getRow(i).getLastCellNum(); j++) {
+	                rowData.add(sheet.getRow(i).getCell(j).toString());
+	            }
+	            targetPartData.add(rowData);
+	        }
+
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    } finally {
+	        try {
+	            if (file != null) file.close();
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }
+	    }
+
+	    return targetPartData;
+	}
+
 	public static void takeScreenshotAtEndOfTest(WebDriver driver, String testName) throws IOException {
         File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         String currentDir = System.getProperty("user.dir"); // Gets project directory
