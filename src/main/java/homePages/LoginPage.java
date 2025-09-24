@@ -41,8 +41,8 @@ public class LoginPage extends TestBase {
 		username.sendKeys(un);
 		password.sendKeys(pwd);
 		loginbutton.click();
+		return null;
 		
-		return new PlantDashboard();
 	}
 
 }
