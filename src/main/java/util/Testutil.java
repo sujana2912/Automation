@@ -23,110 +23,42 @@ import base.TestBase;
 
 public class Testutil extends TestBase {
 
-	public static long PAGE_LOAD_TIMEOUT = 20;
-	public static long IMPLICIT_WAIT = 10;
+    public static final long PAGE_LOAD_TIMEOUT = 20;
+    public static final long IMPLICIT_WAIT = 10;
 
+    // Excel file path (relative to project root)
+    private static final String TEST_DATA_SHEET_PATH =
+            System.getProperty("user.dir") + "/src/main/java/testdata/TestDataExcel.xlsx";
 
-	//public static String TestDataSheet_path="D:\\SUJANA\\Eclipsenew\\TestAutomation\\src\\main\\java\\testdata\\TestDataExcel.xlsx";
+    private static Workbook book;
+    private static Sheet sheet;
 
-	static Workbook book;
-	static Sheet sheet;
+    // ============================= Excel Utilities ============================= //
 
-	public static Object[][] getTestData(String sheetname)
-	{
-		try {
-		    FileInputStream fi = new FileInputStream(
-		        System.getProperty("user.dir") + "/src/main/java/testdata/TestDataExcel.xlsx"
-		    );
-		    // Example: if you’re using Apache POI
-		    XSSFWorkbook workbook = new XSSFWorkbook(fi);
-		    System.out.println("Excel file loaded successfully!");
-		} catch (IOException e) {
-		    System.out.println("Test data file not found: " + e.getMessage());
-		}
-
-		 sheet = book.getSheet(sheetname);
-	        if (sheet == null) {
-	            System.err.println("Sheet '" + sheetname + "' not found in the Excel file.");
-	            return null;
-	        }
-
-		Object[][] data = new Object[sheet.getLastRowNum()][sheet.getRow(0).getLastCellNum()];
-
-		for(int i=0;i<sheet.getLastRowNum();i++)
-		{
-			for(int j=0;j<sheet.getRow(0).getLastCellNum();j++)
-			{
-				data[i][j]=sheet.getRow(i+1).getCell(j).toString();
-			}
-		}
-
-		return data;
-	}
-	public static int getShiftCountFromExcel() {
-        FileInputStream file = null;
-        int shiftCount = 0;
-
-        try {
-            file = new FileInputStream(TestDataSheet_path);
-            book = WorkbookFactory.create(file);
-            sheet = book.getSheet("ShiftConfig"); // Sheet name from Excel
+    public static Object[][] getTestData(String sheetName) {
+        try (FileInputStream fi = new FileInputStream(TEST_DATA_SHEET_PATH)) {
+            book = WorkbookFactory.create(fi);
+            sheet = book.getSheet(sheetName);
 
             if (sheet == null) {
-                System.err.println("Sheet 'ShiftConfig' not found.");
-                return 0;
+                throw new RuntimeException("Sheet '" + sheetName + "' not found in Excel file.");
             }
 
-            shiftCount = sheet.getLastRowNum()-1; // excludes header
-            System.out.println("Shift count from Excel: " + shiftCount);
+            int rows = sheet.getLastRowNum();
+            int cols = sheet.getRow(0).getLastCellNum();
+            Object[][] data = new Object[rows][cols];
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                if (file != null) {
-                    file.close();
+            for (int i = 0; i < rows; i++) {
+                for (int j = 0; j < cols; j++) {
+                    data[i][j] = sheet.getRow(i + 1).getCell(j).toString();
                 }
-            } catch (IOException e) {
-                e.printStackTrace();
             }
+            return data;
+
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to read test data: " + e.getMessage(), e);
         }
-
-        return shiftCount;
     }
-	public static List<List<String>> getTargetPartDataFromExcel() {
-	    List<List<String>> targetPartData = new ArrayList<>();
-	    FileInputStream file = null;
-	    try {
-	        file = new FileInputStream(TestDataSheet_path);
-	        book = WorkbookFactory.create(file);
-	        sheet = book.getSheet("TargetPartConfig");
-
-	        if (sheet == null) {
-	            System.err.println("TargetPart sheet not found!");
-	            return null;
-	        }
-
-	        for (int i = 1; i <= sheet.getLastRowNum(); i++) {
-	            List<String> rowData = new ArrayList<>();
-	            for (int j = 1; j < sheet.getRow(i).getLastCellNum(); j++) {
-	                rowData.add(sheet.getRow(i).getCell(j).toString());
-	            }
-	            targetPartData.add(rowData);
-	        }
-
-	    } catch (Exception e) {
-	        e.printStackTrace();
-	    } finally {
-	        try {
-	            if (file != null) file.close();
-	        } catch (IOException e) {
-	            e.printStackTrace();
-	        }
-	    }
-
-	    return targetPartData;
-	}
 
 	public static void takeScreenshotAtEndOfTest(WebDriver driver, String testName) throws IOException {
         File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
