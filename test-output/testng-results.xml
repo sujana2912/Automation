@@ -2,44 +2,44 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-25T15:03:26 IST" name="TestAutomation" finished-at="2025-09-25T15:03:39 IST" duration-ms="12595">
+  <suite started-at="2025-09-25T15:21:00 IST" name="TestAutomation" finished-at="2025-09-25T15:21:15 IST" duration-ms="15089">
     <groups>
     </groups>
-    <test started-at="2025-09-25T15:03:26 IST" name="testngSFSFrameworkbuild" finished-at="2025-09-25T15:03:39 IST" duration-ms="12595">
+    <test started-at="2025-09-25T15:21:00 IST" name="testngSFSFrameworkbuild" finished-at="2025-09-25T15:21:15 IST" duration-ms="15089">
       <class name="homepageTestcases.LoginTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:homepageTestcases.LoginTest@1fa268de]" started-at="2025-09-25T15:03:26 IST" name="setup" finished-at="2025-09-25T15:03:31 IST" duration-ms="4349" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:homepageTestcases.LoginTest@1fa268de]" started-at="2025-09-25T15:21:00 IST" name="setup" finished-at="2025-09-25T15:21:07 IST" duration-ms="7160" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="testtitleTest()[pri:1, instance:homepageTestcases.LoginTest@1fa268de]" started-at="2025-09-25T15:03:31 IST" name="testtitleTest" finished-at="2025-09-25T15:03:31 IST" duration-ms="34" status="PASS">
+        <test-method signature="testtitleTest()[pri:1, instance:homepageTestcases.LoginTest@1fa268de]" started-at="2025-09-25T15:21:07 IST" name="testtitleTest" finished-at="2025-09-25T15:21:07 IST" duration-ms="22" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testtitleTest -->
-        <test-method is-config="true" signature="tearsdown()[pri:0, instance:homepageTestcases.LoginTest@1fa268de]" started-at="2025-09-25T15:03:31 IST" name="tearsdown" finished-at="2025-09-25T15:03:31 IST" duration-ms="190" status="PASS">
+        <test-method is-config="true" signature="tearsdown()[pri:0, instance:homepageTestcases.LoginTest@1fa268de]" started-at="2025-09-25T15:21:07 IST" name="tearsdown" finished-at="2025-09-25T15:21:08 IST" duration-ms="305" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearsdown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:homepageTestcases.LoginTest@1fa268de]" started-at="2025-09-25T15:03:31 IST" name="setup" finished-at="2025-09-25T15:03:34 IST" duration-ms="3310" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:homepageTestcases.LoginTest@1fa268de]" started-at="2025-09-25T15:21:08 IST" name="setup" finished-at="2025-09-25T15:21:11 IST" duration-ms="3324" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="logoTest()[pri:2, instance:homepageTestcases.LoginTest@1fa268de]" started-at="2025-09-25T15:03:34 IST" name="logoTest" finished-at="2025-09-25T15:03:34 IST" duration-ms="55" status="PASS">
+        <test-method signature="logoTest()[pri:2, instance:homepageTestcases.LoginTest@1fa268de]" started-at="2025-09-25T15:21:11 IST" name="logoTest" finished-at="2025-09-25T15:21:11 IST" duration-ms="49" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logoTest -->
-        <test-method is-config="true" signature="tearsdown()[pri:0, instance:homepageTestcases.LoginTest@1fa268de]" started-at="2025-09-25T15:03:34 IST" name="tearsdown" finished-at="2025-09-25T15:03:35 IST" duration-ms="164" status="PASS">
+        <test-method is-config="true" signature="tearsdown()[pri:0, instance:homepageTestcases.LoginTest@1fa268de]" started-at="2025-09-25T15:21:11 IST" name="tearsdown" finished-at="2025-09-25T15:21:11 IST" duration-ms="237" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearsdown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:homepageTestcases.LoginTest@1fa268de]" started-at="2025-09-25T15:03:35 IST" name="setup" finished-at="2025-09-25T15:03:38 IST" duration-ms="3864" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:homepageTestcases.LoginTest@1fa268de]" started-at="2025-09-25T15:21:11 IST" name="setup" finished-at="2025-09-25T15:21:15 IST" duration-ms="3377" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="loginTest()[pri:3, instance:homepageTestcases.LoginTest@1fa268de]" started-at="2025-09-25T15:03:38 IST" name="loginTest" finished-at="2025-09-25T15:03:39 IST" duration-ms="396" status="PASS">
+        <test-method signature="loginTest()[pri:3, instance:homepageTestcases.LoginTest@1fa268de]" started-at="2025-09-25T15:21:15 IST" name="loginTest" finished-at="2025-09-25T15:21:15 IST" duration-ms="335" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method is-config="true" signature="tearsdown()[pri:0, instance:homepageTestcases.LoginTest@1fa268de]" started-at="2025-09-25T15:03:39 IST" name="tearsdown" finished-at="2025-09-25T15:03:39 IST" duration-ms="188" status="PASS">
+        <test-method is-config="true" signature="tearsdown()[pri:0, instance:homepageTestcases.LoginTest@1fa268de]" started-at="2025-09-25T15:21:15 IST" name="tearsdown" finished-at="2025-09-25T15:21:15 IST" duration-ms="243" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearsdown -->
