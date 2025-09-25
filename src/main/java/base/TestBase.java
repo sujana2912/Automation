@@ -8,10 +8,11 @@ import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import util.Testutil;  // make sure this exists
+import util.Testutil;
 
 public class TestBase {
 
@@ -36,10 +37,16 @@ public class TestBase {
         String browserName = prop.getProperty("browser");
 
         if (browserName.equalsIgnoreCase("chrome")) {
-            WebDriverManager.chromedriver().setup();  // ✅ correct usage
-            driver = new ChromeDriver();
+            WebDriverManager.chromedriver().setup();
+
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--headless"); 
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+
+            driver = new ChromeDriver(options); // ✅ only once
         }
-        // Add Firefox/Edge if needed
+        // Add Firefox/Edge setup here if needed
 
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(Testutil.PAGE_LOAD_TIMEOUT));
