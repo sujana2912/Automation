@@ -51,7 +51,7 @@ public class TestBase {
 	{
 		Select s =new Select(xpath);
 		String correctedValue = value.replace("\u00A0", " ");
-		s.selectByContainsVisibleText(correctedValue);
+		//s.selectByContainsVisibleText(correctedValue); 
 		s.selectByVisibleText(correctedValue);
 		
 	}
