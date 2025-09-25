@@ -36,13 +36,11 @@ public class LoginPage extends TestBase {
 		return logo.isDisplayed();
 	}
 	
-	public PlantDashboard login(String un,String pwd)
-	{
-		username.sendKeys(un);
-		password.sendKeys(pwd);
-		loginbutton.click();
-		return null;
-		
+	public void login(String un, String pwd) {
+	    username.sendKeys(un);
+	    password.sendKeys(pwd);
+	    loginbutton.click();
 	}
+
 
 }

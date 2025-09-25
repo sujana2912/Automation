@@ -44,9 +44,10 @@ public class LoginTest extends TestBase {
 
     @Test(priority = 3)
     public void loginTest() {
-        System.out.println("Test Start: loginTest");
-        pd = lp.login(prop.getProperty("username"), prop.getProperty("password"));
-        System.out.println("Test Success: loginTest");
+        lp.login(prop.getProperty("username"), prop.getProperty("password"));
+        // Optionally, assert something on the next page or URL
+        String currentUrl = driver.getCurrentUrl();
+        Assert.assertTrue(currentUrl.contains("dashboard"), "Login failed or not redirected");
     }
 
     @AfterClass
