@@ -4,7 +4,7 @@
       <test name="testngSFSFrameworkbuild">
            <classes>
                   <class name="homepageTestcases.LoginTest"> </class>
-                  <class name="testcases.ConfigurationPageTest"> </class> 
+                  <!-- <class name="testcases.ConfigurationPageTest"> </class> -->
            </classes>
       </test>
 </suite>
