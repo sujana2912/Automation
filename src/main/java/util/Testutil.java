@@ -11,6 +11,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -26,36 +27,23 @@ public class Testutil extends TestBase {
 	public static long IMPLICIT_WAIT = 10;
 
 
-	public static String TestDataSheet_path="D:\\SUJANA\\Eclipsenew\\TestAutomation\\src\\main\\java\\testdata\\TestDataExcel.xlsx";
+	//public static String TestDataSheet_path="D:\\SUJANA\\Eclipsenew\\TestAutomation\\src\\main\\java\\testdata\\TestDataExcel.xlsx";
 
 	static Workbook book;
 	static Sheet sheet;
 
 	public static Object[][] getTestData(String sheetname)
 	{
-		FileInputStream file = null;
-
 		try {
-			file = new FileInputStream(TestDataSheet_path);
-			book=WorkbookFactory.create(file);
-			
-		} catch (FileNotFoundException e) {
-            System.err.println("Excel file not found: " + TestDataSheet_path);
-            e.printStackTrace();
-            return null; 
-        } catch (IOException e) {
-            System.err.println("Error reading the Excel file.");
-            e.printStackTrace();
-            return null;
-        } finally {
-            try {
-                if (file != null) {
-                    file.close(); // Close the file stream
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+		    FileInputStream fi = new FileInputStream(
+		        System.getProperty("user.dir") + "/src/main/java/testdata/TestDataExcel.xlsx"
+		    );
+		    // Example: if you’re using Apache POI
+		    XSSFWorkbook workbook = new XSSFWorkbook(fi);
+		    System.out.println("Excel file loaded successfully!");
+		} catch (IOException e) {
+		    System.out.println("Test data file not found: " + e.getMessage());
+		}
 
 		 sheet = book.getSheet(sheetname);
 	        if (sheet == null) {
