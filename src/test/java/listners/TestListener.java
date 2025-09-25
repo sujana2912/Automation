@@ -24,11 +24,7 @@ public class TestListener extends TestBase implements ITestListener {
 		System.out.println("Test Failed");
 		 System.out.println("Test failed: " + result.getName());
 
-	        try {
-	            Testutil.takeScreenshotAtEndOfTest(driver, result.getName());
-	        } catch (IOException e) {
-	            e.printStackTrace();
-	        }
+	        Testutil.takeScreenshotAtEndOfTest(driver, result.getName());
 	}
 
 	public void onTestSkipped(ITestResult result) {
