@@ -10,13 +10,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
-import io.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import util.Testutil;
+import util.Testutil;  // make sure this exists
 
 public class TestBase {
 
-    protected static WebDriver driver;   // shared driver instance
+    protected static WebDriver driver;
     protected static Properties prop;
 
     // Constructor: load properties
@@ -24,7 +23,7 @@ public class TestBase {
         try {
             prop = new Properties();
             FileInputStream fi = new FileInputStream(
-                    System.getProperty("user.dir") + "/src/main/resources/config/credential.properties"
+                System.getProperty("user.dir") + "/src/main/resources/config/credential.properties"
             );
             prop.load(fi);
         } catch (IOException e) {
@@ -37,10 +36,10 @@ public class TestBase {
         String browserName = prop.getProperty("browser");
 
         if (browserName.equalsIgnoreCase("chrome")) {
-            WebDriverManager.chromedriver().setup();
+            WebDriverManager.chromedriver().setup();  // ✅ correct usage
             driver = new ChromeDriver();
-        } 
-        // if needed: add Firefox/Edge here
+        }
+        // Add Firefox/Edge if needed
 
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(Testutil.PAGE_LOAD_TIMEOUT));
