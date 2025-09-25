@@ -23,12 +23,14 @@ public class TestBase {
 	public TestBase()
 	{
 		try {
-		prop = new Properties();
-		FileInputStream fi = new FileInputStream("D:\\SUJANA\\Eclipsenew\\TestAutomation\\src\\main\\java\\config\\config.properties");
-		prop.load(fi);
-		} catch(IOException e) {
-			System.out.println("filenotfound");
-		}
+            prop = new Properties();
+            FileInputStream fi = new FileInputStream(
+                System.getProperty("user.dir") + "/src/main/resources/config/credential.properties"
+            );
+            prop.load(fi);
+        } catch (IOException e) {
+            System.out.println("Config file not found: " + e.getMessage());
+        }
 	}
 
 	public static void intialization()
@@ -51,7 +53,6 @@ public class TestBase {
 	{
 		Select s =new Select(xpath);
 		String correctedValue = value.replace("\u00A0", " ");
-		//s.selectByContainsVisibleText(correctedValue); 
 		s.selectByVisibleText(correctedValue);
 		
 	}
