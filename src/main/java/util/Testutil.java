@@ -117,14 +117,16 @@ public class Testutil extends TestBase {
     // ============================= Selenium Helpers ============================= //
 
     public static void click(String xpath) {
-        driver.findElement(By.xpath(xpath)).click();
+        WebElement element = driver.findElement(By.xpath(xpath));
+        waitForElementToBeClickable(element, 10).click(); // explicit wait
     }
 
     public static void text(String xpath, String value) {
-        driver.findElement(By.xpath(xpath)).sendKeys(value);
+        WebElement element = driver.findElement(By.xpath(xpath));
+        WebElement visibleElement = waitForElementToBeVisible(element, 10);
+        visibleElement.clear();
+        visibleElement.sendKeys(value);
     }
 
-    public static void dropdown(WebElement element, String value) {
-        new Select(element).selectByVisibleText(value);
-    }
+
 }
