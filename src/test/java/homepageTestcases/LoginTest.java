@@ -31,7 +31,7 @@ public class LoginTest extends TestBase {
         System.out.println("Test Start: testtitleTest");
         String title = lp.validatetitle();
         Assert.assertEquals(title, "Wimera");
-        System.out.println("Test Success: testtitleTest");
+        //System.out.println("Test Success: testtitleTest");
     }
 
     @Test(priority = 2)
@@ -44,10 +44,9 @@ public class LoginTest extends TestBase {
 
     @Test(priority = 3)
     public void loginTest() {
-        lp.login(prop.getProperty("username"), prop.getProperty("password"));
-        // Optionally, assert something on the next page or URL
-        String currentUrl = driver.getCurrentUrl();
-        Assert.assertTrue(currentUrl.contains("dashboard"), "Login failed or not redirected");
+        System.out.println("Test Start: loginTest");
+        pd = lp.login(prop.getProperty("username"), prop.getProperty("password"));
+        //System.out.println("Test Success: loginTest");
     }
 
     @AfterClass

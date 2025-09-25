@@ -38,11 +38,11 @@ public class PlantDashboard extends TestBase {
 		return new ZoneDashboard();
 	}
 	
-	public  ConfigurationPage clickconfigpage()
-	{
-		configpage.click();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Testutil.IMPLICIT_WAIT));
-		return new ConfigurationPage();
-	}
+//	public  ConfigurationPage clickconfigpage()
+//	{
+//		configpage.click();
+//		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Testutil.IMPLICIT_WAIT));
+//		return new ConfigurationPage();
+//	}
 	
 }
