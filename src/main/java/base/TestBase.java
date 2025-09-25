@@ -37,19 +37,19 @@ public class TestBase {
         String browserName = prop.getProperty("browser");
 
         if (browserName.equalsIgnoreCase("chrome")) {
+            // Auto-match the installed Chrome version
             WebDriverManager.chromedriver().setup();
-            WebDriverManager.chromedriver()
-            .driverVersion("140.0.7339.128") // force a known compatible driver
-            .setup();
+
             ChromeOptions options = new ChromeOptions();
-           options.addArguments("--headless"); 
+            // Uncomment headless only if running in CI or you don't want UI
+            options.addArguments("--headless"); 
             options.addArguments("--no-sandbox");
             options.addArguments("--disable-dev-shm-usage");
 
-            driver = new ChromeDriver(options); // ✅ only once
+            driver = new ChromeDriver(options); // create only once
         }
-        // Add Firefox/Edge setup here if needed
 
+        // Maximize & set timeouts
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(Testutil.PAGE_LOAD_TIMEOUT));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Testutil.IMPLICIT_WAIT));

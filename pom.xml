@@ -24,6 +24,7 @@
       <artifactId>selenium-java</artifactId>
       <version>4.23.0</version>
     </dependency>
+    
 
     <!-- WebDriverManager -->
     <dependency>
