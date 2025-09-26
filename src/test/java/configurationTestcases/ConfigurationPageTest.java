@@ -41,7 +41,6 @@ public class ConfigurationPageTest extends TestBase {
 	public void clickconfigpageTest()
 	{
 		pd.clickconfigpage();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Testutil.PAGE_LOAD_TIMEOUT));
 		cp.clickrole();
 		cp.clickuser();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Testutil.IMPLICIT_WAIT));

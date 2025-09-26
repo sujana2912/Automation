@@ -41,7 +41,9 @@ public class UserConfigTest extends TestBase {
 	@Test(priority=1)
 	public void clickadduserTest()
 	{
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(testutil.PAGE_LOAD_TIMEOUT));
 		pd.clickconfigpage();
+		cp.clickrole();
 		cp.clickuser();
 		ucp.clickadduser();
 	}
@@ -56,6 +58,7 @@ public class UserConfigTest extends TestBase {
 	@Test(priority=2,dataProvider = "testdatafile")
 	public void newuserTest(String UserId,String Username, String EmailId, String Role, String MobileNo,String Password)
 	{
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Testutil.IMPLICIT_WAIT));
 		pd.clickconfigpage();
 		cp.clickrole();
 		cp.clickuser();

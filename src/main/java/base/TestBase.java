@@ -45,7 +45,7 @@ public class TestBase {
 
             ChromeOptions options = new ChromeOptions();
             // Uncomment headless only if running in CI or you don't want UI
-            options.addArguments("--headless"); 
+           // options.addArguments("--headless"); 
             options.addArguments("--no-sandbox");
             options.addArguments("--disable-dev-shm-usage");
 

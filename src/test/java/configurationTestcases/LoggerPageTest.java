@@ -1,5 +1,7 @@
 package configurationTestcases;
 
+import java.time.Duration;
+
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -48,6 +50,7 @@ public class LoggerPageTest extends TestBase {
 	@Test(dataProvider = "testdatafile")
 	public void newloggerTest(String LoggerType,String LoggerId, String LoggerName,String IP,String Port, String Frequency, String ConnectionTimeout, String Plant,String Zone,String Machine,String OEEType)
 	{
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Testutil.IMPLICIT_WAIT));
 		pd.clickconfigpage();
 		cp.clickrole();
 		cp.clicklogger();

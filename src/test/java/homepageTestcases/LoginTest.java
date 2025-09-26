@@ -39,7 +39,7 @@ public class LoginTest extends TestBase {
         System.out.println("Test Start: logoTest");
         boolean logo = lp.validatelogo();
         Assert.assertTrue(logo);
-        System.out.println("Test Success: logoTest");
+       // System.out.println("Test Success: logoTest");
     }
 
     @Test(priority = 3)
@@ -54,6 +54,6 @@ public class LoginTest extends TestBase {
         if (driver != null) {
             driver.quit();  // close driver only once after all tests
         }
-        System.out.println("All tests finished, browser closed");
+        //System.out.println("All tests finished, browser closed");
     }
 }

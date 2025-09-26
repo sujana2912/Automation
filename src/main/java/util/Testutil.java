@@ -3,6 +3,7 @@ package util;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +16,9 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import base.TestBase;
 
@@ -100,19 +103,28 @@ public class Testutil extends TestBase {
         return targetPartData;
     }
 
-    // ============================= Screenshot Utility ============================= //
-
     public static void takeScreenshotAtEndOfTest(WebDriver driver, String testName) {
         try {
+            // ✅ Wait for toaster if it exists (change selector as per your app)
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+            try {
+                wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".toaster-class")));
+            } catch (Exception e) {
+                System.out.println("Toaster not found, capturing normal screenshot.");
+            }
+
+            // ✅ Capture screenshot
             File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-            String screenshotPath = System.getProperty("user.dir") +
-                    "/screenshots/" + testName + "_" + System.currentTimeMillis() + ".png";
+            String screenshotPath = System.getProperty("user.dir") + "/screenshots/" +
+                    testName + "_" + System.currentTimeMillis() + ".png";
             FileUtils.copyFile(scrFile, new File(screenshotPath));
             System.out.println("Screenshot saved: " + screenshotPath);
+
         } catch (IOException e) {
             throw new RuntimeException("Failed to save screenshot: " + e.getMessage(), e);
         }
     }
+
 
     // ============================= Selenium Helpers ============================= //
 

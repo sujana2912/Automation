@@ -5,9 +5,17 @@
         <classes>
             <class name="homepageTestcases.LoginTest"/>
             <class name="homepageTestcases.PlantDashboardTest"/>
-            <class name="homepageTestcases.ZoneDashboardTest"/>
-            <class name="homepageTestcases.MachineDashboardTest"/>
-            <!-- Add more test classes here as needed -->
+            
+            <!-- <class name="homepageTestcases.ZoneDashboardTest"/> -->
+            <!-- <class name="homepageTestcases.MachineDashboardTest"/> -->
+            
+            <class name="configurationTestcases.ConfigurationPageTest"/>
+            <class name="configurationTestcases.UserConfigTest"/>
+            <class name="configurationTestcases.ZoneConfigPageTest"/>
+            <class name="configurationTestcases.ShiftConfigPageTest"/>
+            <class name="configurationTestcases.MachineConfigTest"/>
+            <class name="configurationTestcases.LoggerPageTest"/>
+            <class name="configurationTestcases.TargetpartPageTest"/>
         </classes>
     </test>
 </suite>
