@@ -3,62 +3,13 @@
 <suite name="Failed suite [TestAutomation]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="AllTests(failed)">
     <classes>
-      <class name="configurationTestcases.LoggerPageTest">
-        <methods>
-          <include name="newloggerTest" invocation-numbers="0 1 2 3 4"/>
-          <include name="setup"/>
-          <include name="teardown"/>
-        </methods>
-      </class> <!-- configurationTestcases.LoggerPageTest -->
-      <class name="configurationTestcases.ConfigurationPageTest">
-        <methods>
-          <include name="clickconfigpageTest"/>
-          <include name="setup"/>
-          <include name="close"/>
-        </methods>
-      </class> <!-- configurationTestcases.ConfigurationPageTest -->
-      <class name="homepageTestcases.PlantDashboardTest">
-        <methods>
-          <include name="verifyzoneTest"/>
-          <include name="quit"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- homepageTestcases.PlantDashboardTest -->
       <class name="configurationTestcases.ZoneConfigPageTest">
         <methods>
-          <include name="newuserTest" invocation-numbers="0"/>
+          <include name="newZoneTest" invocation-numbers="0"/>
           <include name="teardown"/>
           <include name="setup"/>
         </methods>
       </class> <!-- configurationTestcases.ZoneConfigPageTest -->
-      <class name="configurationTestcases.ShiftConfigPageTest">
-        <methods>
-          <include name="teardown"/>
-          <include name="setup"/>
-          <include name="newuserTest" invocation-numbers="0 1 2"/>
-        </methods>
-      </class> <!-- configurationTestcases.ShiftConfigPageTest -->
-      <class name="configurationTestcases.TargetpartPageTest">
-        <methods>
-          <include name="addtargetpartTest"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- configurationTestcases.TargetpartPageTest -->
-      <class name="configurationTestcases.MachineConfigTest">
-        <methods>
-          <include name="newmachineTest" invocation-numbers="0 1 2 3 4"/>
-          <include name="setup"/>
-          <include name="teardown"/>
-        </methods>
-      </class> <!-- configurationTestcases.MachineConfigTest -->
-      <class name="configurationTestcases.UserConfigTest">
-        <methods>
-          <include name="clickadduserTest"/>
-          <include name="teardown"/>
-          <include name="setup"/>
-          <include name="newuserTest" invocation-numbers="0 1 2"/>
-        </methods>
-      </class> <!-- configurationTestcases.UserConfigTest -->
     </classes>
   </test> <!-- AllTests(failed) -->
 </suite> <!-- Failed suite [TestAutomation] -->

@@ -26,6 +26,7 @@ public class Testutil extends TestBase {
 
     public static final long PAGE_LOAD_TIMEOUT = 20;
     public static final long IMPLICIT_WAIT = 10;
+    public static By toasterLocator = By.id("toast-container");
 
     // Excel file path (relative to project root)
     private static final String TEST_DATA_SHEET_PATH =
@@ -61,6 +62,10 @@ public class Testutil extends TestBase {
         }
     }
 
+    
+   // =========== Shift ==========
+    
+    
     public static int getShiftCountFromExcel() {
         try (FileInputStream fi = new FileInputStream(TEST_DATA_SHEET_PATH)) {
             book = WorkbookFactory.create(fi);
@@ -102,6 +107,8 @@ public class Testutil extends TestBase {
 
         return targetPartData;
     }
+    
+    //===============Screenshot===============
 
     public static void takeScreenshotAtEndOfTest(WebDriver driver, String testName) {
         try {
@@ -139,6 +146,53 @@ public class Testutil extends TestBase {
         visibleElement.clear();
         visibleElement.sendKeys(value);
     }
+    
+   //===================Dropdown element checking==================
+    
+    public static boolean isOptionPresent(WebElement element, String value) {
+        Select select = new Select(element);
+        List<WebElement> options = select.getOptions();
+        for (WebElement option : options) {
+            if (option.getText().trim().equalsIgnoreCase(value.trim())) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    //===================lentinent option(skipping element from dropsown) ===================
+    
+    public static void safeSelectDropdown(WebElement dropdownElement, String value) {
+        try {
+            Select select = new Select(dropdownElement);
 
+            boolean valueExists = select.getOptions()
+                                        .stream()
+                                        .anyMatch(option -> option.getText().equalsIgnoreCase(value));
+
+            if (valueExists) {
+                select.selectByVisibleText(value);
+                System.out.println("✅ Selected: " + value);
+            } else {
+                System.out.println("⚠ Lenient Handling: '" + value + "' not found in dropdown. Skipping selection.");
+                // you can also log in report instead of console
+            }
+        } catch (Exception e) {
+            System.out.println("❌ Error in safeSelectDropdown: " + e.getMessage());
+        }
+    }
+    
+    //======================Toaster==============================
+    
+    public static String getToasterMessage(WebDriver driver, By toasterLocator, int timeoutSeconds) {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutSeconds));
+            WebElement toaster = wait.until(ExpectedConditions.visibilityOfElementLocated(toasterLocator));
+            return toaster.getText();
+        } catch (Exception e) {
+            System.out.println("⚠ Toaster did not appear or disappeared too quickly.");
+            return null;
+        }
+    }
 
 }

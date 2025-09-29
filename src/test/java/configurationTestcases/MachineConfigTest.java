@@ -53,7 +53,7 @@ public class MachineConfigTest extends TestBase{
 		pd.clickconfigpage();
 		cp.clickrole();
 		cp.clickmachine();
-		mcp.createmachine(MachineId, MachineName, Model, Manufacturer, Plant, Zone, MachineType);
+		mcp.createmachine(MachineId, MachineName, Model, Manufacturer, Plant, Zone, MachineType, null);
 		
 		System.out.println("Added");
 	}

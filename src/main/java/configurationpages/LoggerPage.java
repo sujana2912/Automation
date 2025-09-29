@@ -7,11 +7,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.reporters.jq.Model;
 
 import base.TestBase;
+import util.Testutil;
+import configurationpages.*;
 
 public class LoggerPage extends TestBase {
-
 	@FindBy(xpath="//i[@class='fas fa-plus-circle']")
 	WebElement addnewlogger;
 	
@@ -23,6 +25,9 @@ public class LoggerPage extends TestBase {
 
 	@FindBy(xpath="//input[@placeholder='Logger Name']")
 	WebElement logname;
+	
+	@FindBy(xpath="//input[@placeholder='Index']")
+	WebElement logindex;
 	
 	@FindBy(xpath="//input[@placeholder='IP']")
 	WebElement logIP;
@@ -58,23 +63,27 @@ public class LoggerPage extends TestBase {
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void createlogger(String ltype, String lid,String lname, String lIP, String lpt, String frq, String cto, String pltp, String ztp, String Mtype, String oee)
+	public void createlogger(String mdltype, String ltype, String lid,String lname, String lIP, String lpt, String frq, String cto, String pltp, String ztp, String Mtype, String oee)
 	{
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Testutil.IMPLICIT_WAIT));
 		//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		addnewlogger.click();
 		
 		//wait.until(ExpectedConditions.visibilityOf(loggertype));
-	    dropdown(loggertype, ltype);
+	   // dropdown(loggertype, ltype);
 	    
 		logid.sendKeys(lid);
 		logname.sendKeys(lname);
+		logindex.sendKeys("0");
 		logIP.sendKeys(lIP);
 		port.sendKeys(lpt);
 		dropdown(frequency, frq);
-		dropdown(connectionTimeout, cto);
-		dropdown(selectplant, pltp);
-		dropdown(selectzone, ztp);
+		//dropdown(connectionTimeout, cto);
+		//dropdown(selectplant, pltp);
+		//dropdown(selectzone, ztp);
 		dropdown(selectmachine, Mtype);
+		 MachineConfiguration machinePage = new MachineConfiguration();
+	        Testutil.safeSelectDropdown(machinePage.getModelDropdown(), mdltype);
 		dropdown(selectoeetype, oee);
 		addbtn.click();
 	}

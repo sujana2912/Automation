@@ -54,7 +54,7 @@ public class LoggerPageTest extends TestBase {
 		pd.clickconfigpage();
 		cp.clickrole();
 		cp.clicklogger();
-		lcp.createlogger(LoggerType, LoggerId, LoggerName, IP, Port, Frequency, ConnectionTimeout, Plant, Zone, Machine, OEEType );
+		lcp.createlogger(LoggerType, LoggerId, LoggerName, IP, Port, Frequency, ConnectionTimeout, Plant, Zone, Machine, OEEType, null );
 		
 		System.out.println(LoggerId+" is Added");
 	}

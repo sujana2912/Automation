@@ -1,5 +1,7 @@
 package configurationTestcases;
 
+import java.time.Duration;
+
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -42,14 +44,17 @@ public class ShiftConfigPageTest extends TestBase {
 		return data;
 	}
 	
+	int totalShifts = Testutil.getShiftCountFromExcel();
+	
 	@Test(priority=1,dataProvider = "testdatafile")
-	public void newuserTest(String ShiftId,String ShiftName, String StartTime,String EndTime,String DowntimeDuration,String DowntimeStart)
+	public void newuserTest(String ShiftId,String ShiftName, String StartTime,String EndTime,String DowntimeDuration,String DowntimeStart, int rowIndex)
 	{
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Testutil.IMPLICIT_WAIT));
 		pd.clickconfigpage();
 		cp.clickrole();
 		cp.clickshift();
-		
-		scp.createShift(ShiftId, ShiftName, StartTime, EndTime, DowntimeDuration, DowntimeStart);
+		boolean isLastShift = (rowIndex == totalShifts - 1);
+		scp.createShift(ShiftId, ShiftName, StartTime, EndTime, DowntimeDuration, DowntimeStart, isLastShift);
 		
 		System.out.println("Added");
 	}

@@ -1,5 +1,7 @@
 package homepageTestcases;
 
+import java.time.Duration;
+
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -9,6 +11,7 @@ import org.testng.annotations.Test;
 import base.TestBase;
 import homePages.LoginPage;
 import homePages.PlantDashboard;
+import util.Testutil;
 
 @Listeners(listners.TestListener.class)
 public class LoginTest extends TestBase {
@@ -27,26 +30,30 @@ public class LoginTest extends TestBase {
     }
 
     @Test(priority = 1)
-    public void testtitleTest() {
-        System.out.println("Test Start: testtitleTest");
+    public void testTitle() {
+        System.out.println("Test Start: testTitle");
         String title = lp.validatetitle();
-        Assert.assertEquals(title, "Wimera");
-        //System.out.println("Test Success: testtitleTest");
+        Assert.assertEquals(title, "Wimera", "Login page title is incorrect!");
     }
 
     @Test(priority = 2)
     public void logoTest() {
         System.out.println("Test Start: logoTest");
-        boolean logo = lp.validatelogo();
-        Assert.assertTrue(logo);
-       // System.out.println("Test Success: logoTest");
+        boolean logoDisplayed = lp.validatelogo();
+        Assert.assertTrue(logoDisplayed, "Login page logo is not displayed!");
+       
     }
 
     @Test(priority = 3)
     public void loginTest() {
-        System.out.println("Test Start: loginTest");
+       
         pd = lp.login(prop.getProperty("username"), prop.getProperty("password"));
-        //System.out.println("Test Success: loginTest");
+
+        // Wait for some element in PlantDashboard to ensure login was successful
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Testutil.IMPLICIT_WAIT));
+        boolean dashboardVisible = pd.isDashboardVisible(); // You need to create this method in PlantDashboard
+        Assert.assertTrue(dashboardVisible, "Login failed or dashboard not visible!");
+        System.out.println("Login successful, dashboard visible.");
     }
 
     @AfterClass
@@ -54,6 +61,6 @@ public class LoginTest extends TestBase {
         if (driver != null) {
             driver.quit();  // close driver only once after all tests
         }
-        //System.out.println("All tests finished, browser closed");
+        
     }
 }
