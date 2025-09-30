@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-TestAutomation" class="navigator-link">
-              <span class="suite-name border-failed">TestAutomation</span>
+              <span class="suite-name border-passed">TestAutomation</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -93,21 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">10 methods, 1 failed,   9 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-TestAutomation" class="hide-methods failed suite-TestAutomation"> (hide)</a> <!-- hide-methods failed suite-TestAutomation -->
-                      <a href="#" panel-name="suite-TestAutomation" class="show-methods failed suite-TestAutomation"> (show)</a> <!-- show-methods failed suite-TestAutomation -->
-                    </span>
-                    <div class="method-list-content failed suite-TestAutomation">
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-TestAutomation" title="configurationTestcases.ZoneConfigPageTest" class="method navigator-link" hash-for-method="newZoneTest(Zone1,  plant1 , Zone-1)">newZoneTest(Zone1,  plant1 , Zone-1)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-TestAutomation -->
+                    <span class="method-stats">7 methods,   7 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -138,17 +124,7 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-TestAutomation" title="configurationTestcases.UserConfigTest" class="method navigator-link" hash-for-method="newUserTest(1.0, Admin, admin@gmail.com, ADMIN, 9.876543212E9, welcome)">newUserTest(1.0, Admin, admin@gmail.com, ADMIN, 9.876543212E9, welcome)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-TestAutomation" title="configurationTestcases.UserConfigTest" class="method navigator-link" hash-for-method="newUserTest(2.0, Operator, operator@gmail.com, OPERATOR, 9.876543211E9, welcome)">newUserTest(2.0, Operator, operator@gmail.com, OPERATOR, 9.876543211E9, welcome)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-TestAutomation" title="configurationTestcases.UserConfigTest" class="method navigator-link" hash-for-method="newUserTest(3.0, Supervisor, supervisor@gmail.com, SUPERVISOR, 9.876543213E9, welcome)">newUserTest(3.0, Supervisor, supervisor@gmail.com, SUPERVISOR, 9.876543213E9, welcome)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-TestAutomation" title="configurationTestcases.ZoneConfigPageTest" class="method navigator-link" hash-for-method="newZoneTest(Zone1,  plant1 , Zone-1)">newZoneTest(Zone1,  plant1 , Zone-1)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -173,9 +149,9 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-TestAutomation" class="panel TestAutomation">
-          <div class="suite-TestAutomation-class-failed">
+          <div class="suite-TestAutomation-class-passed">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
+              <img src="passed.png"/>
               <span class="class-name">configurationTestcases.ZoneConfigPageTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -185,44 +161,6 @@
                   </a> <!-- newZoneTest(Zone1,  plant1 , Zone-1) -->
                   <span class="method-name">newZoneTest</span>
                   <span class="parameters">(Zone1,  plant1 , Zone-1)</span>
-                  <div class="stack-trace">java.lang.AssertionError: Zone creation might have failed. Actual toaster: Zone
-Added Successfully expected [true] but found [false]
-	at configurationTestcases.ZoneConfigPageTest.newZoneTest(ZoneConfigPageTest.java:53)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 30 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-TestAutomation-class-failed -->
-          <div class="suite-TestAutomation-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">configurationTestcases.UserConfigTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="newUserTest(1.0, Admin, admin@gmail.com, ADMIN, 9.876543212E9, welcome)">
-                  </a> <!-- newUserTest(1.0, Admin, admin@gmail.com, ADMIN, 9.876543212E9, welcome) -->
-                  <span class="method-name">newUserTest</span>
-                  <span class="parameters">(1.0, Admin, admin@gmail.com, ADMIN, 9.876543212E9, welcome)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="newUserTest(2.0, Operator, operator@gmail.com, OPERATOR, 9.876543211E9, welcome)">
-                  </a> <!-- newUserTest(2.0, Operator, operator@gmail.com, OPERATOR, 9.876543211E9, welcome) -->
-                  <span class="method-name">newUserTest</span>
-                  <span class="parameters">(2.0, Operator, operator@gmail.com, OPERATOR, 9.876543211E9, welcome)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="newUserTest(3.0, Supervisor, supervisor@gmail.com, SUPERVISOR, 9.876543213E9, welcome)">
-                  </a> <!-- newUserTest(3.0, Supervisor, supervisor@gmail.com, SUPERVISOR, 9.876543213E9, welcome) -->
-                  <span class="method-name">newUserTest</span>
-                  <span class="parameters">(3.0, Supervisor, supervisor@gmail.com, SUPERVISOR, 9.876543213E9, welcome)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -299,7 +237,6 @@ Added Successfully expected [true] but found [false]
     &lt;classes&gt;
       &lt;class name=&quot;homepageTestcases.LoginTest&quot;/&gt;
       &lt;class name=&quot;homepageTestcases.PlantDashboardTest&quot;/&gt;
-      &lt;class name=&quot;configurationTestcases.UserConfigTest&quot;/&gt;
       &lt;class name=&quot;configurationTestcases.ZoneConfigPageTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- AllTests --&gt;
@@ -314,7 +251,7 @@ Added Successfully expected [true] but found [false]
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">AllTests (4 classes)</span>
+                <span class="test-name">AllTests (3 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -340,52 +277,40 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(10);
+data.addRows(7);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'newZoneTest')
 data.setCell(0, 2, 'configurationTestcases.ZoneConfigPageTest')
-data.setCell(0, 3, 11882);
+data.setCell(0, 3, 11602);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'newUserTest')
-data.setCell(1, 2, 'configurationTestcases.UserConfigTest')
-data.setCell(1, 3, 10255);
+data.setCell(1, 1, 'loginTest')
+data.setCell(1, 2, 'homepageTestcases.LoginTest')
+data.setCell(1, 3, 945);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'newUserTest')
-data.setCell(2, 2, 'configurationTestcases.UserConfigTest')
-data.setCell(2, 3, 10250);
+data.setCell(2, 1, 'verifyZoneClickTest')
+data.setCell(2, 2, 'homepageTestcases.PlantDashboardTest')
+data.setCell(2, 3, 548);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'newUserTest')
-data.setCell(3, 2, 'configurationTestcases.UserConfigTest')
-data.setCell(3, 3, 10233);
+data.setCell(3, 1, 'dashboardVisibleTest')
+data.setCell(3, 2, 'homepageTestcases.PlantDashboardTest')
+data.setCell(3, 3, 460);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'verifyZoneClickTest')
-data.setCell(4, 2, 'homepageTestcases.PlantDashboardTest')
-data.setCell(4, 3, 601);
+data.setCell(4, 1, 'logoTest')
+data.setCell(4, 2, 'homepageTestcases.LoginTest')
+data.setCell(4, 3, 63);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'loginTest')
+data.setCell(5, 1, 'testTitle')
 data.setCell(5, 2, 'homepageTestcases.LoginTest')
-data.setCell(5, 3, 598);
+data.setCell(5, 3, 23);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'dashboardVisibleTest')
+data.setCell(6, 1, 'homeTitleTest')
 data.setCell(6, 2, 'homepageTestcases.PlantDashboardTest')
-data.setCell(6, 3, 402);
-data.setCell(7, 0, 7)
-data.setCell(7, 1, 'logoTest')
-data.setCell(7, 2, 'homepageTestcases.LoginTest')
-data.setCell(7, 3, 52);
-data.setCell(8, 0, 8)
-data.setCell(8, 1, 'testTitle')
-data.setCell(8, 2, 'homepageTestcases.LoginTest')
-data.setCell(8, 3, 19);
-data.setCell(9, 0, 9)
-data.setCell(9, 1, 'homeTitleTest')
-data.setCell(9, 2, 'homepageTestcases.PlantDashboardTest')
-data.setCell(9, 3, 16);
+data.setCell(6, 3, 12);
 window.suiteTableData['TestAutomation']= { tableData: data, tableDiv: 'times-div-TestAutomation'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 44 seconds</span>
+              <span class="suite-total-time">Total running time: 13 seconds</span>
               <div id="times-div-TestAutomation">
               </div> <!-- times-div-TestAutomation -->
             </div> <!-- times-div -->
@@ -418,114 +343,73 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">testTitle</span>
-                <span class="method-start">4415 ms</span>
+                <span class="method-start">5533 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">logoTest</span>
-                <span class="method-start">4439 ms</span>
+                <span class="method-start">5563 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">loginTest</span>
-                <span class="method-start">4496 ms</span>
+                <span class="method-start">5629 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">5097 ms</span>
+                <span class="method-start">6577 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">homepageTestcases.PlantDashboardTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">5399 ms</span>
+                <span class="method-start">7034 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">homeTitleTest</span>
-                <span class="method-start">9058 ms</span>
+                <span class="method-start">11358 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">9075 ms</span>
+                <span class="method-start">11372 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">9340 ms</span>
+                <span class="method-start">11764 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">dashboardVisibleTest</span>
-                <span class="method-start">13038 ms</span>
+                <span class="method-start">15848 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">13441 ms</span>
+                <span class="method-start">16309 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">13702 ms</span>
+                <span class="method-start">16636 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyZoneClickTest</span>
-                <span class="method-start">17580 ms</span>
+                <span class="method-start">20921 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">18183 ms</span>
-              </div> <!-- configuration-method after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">configurationTestcases.UserConfigTest</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">setup</span>
-                <span class="method-start">19496 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">newUserTest(1.0, Admin, admin@gmail.com, ADMIN, 9.876543212E9, welcome)</span>
-                <span class="method-start">23499 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">teardown</span>
-                <span class="method-start">33735 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setup</span>
-                <span class="method-start">36004 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">newUserTest(2.0, Operator, operator@gmail.com, OPERATOR, 9.876543211E9, welcome)</span>
-                <span class="method-start">39958 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">teardown</span>
-                <span class="method-start">50216 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setup</span>
-                <span class="method-start">52506 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">newUserTest(3.0, Supervisor, supervisor@gmail.com, SUPERVISOR, 9.876543213E9, welcome)</span>
-                <span class="method-start">56267 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">teardown</span>
-                <span class="method-start">66518 ms</span>
+                <span class="method-start">21472 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">configurationTestcases.ZoneConfigPageTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">68888 ms</span>
+                <span class="method-start">22933 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">newZoneTest(Zone1,  plant1 , Zone-1)</span>
-                <span class="method-start">72953 ms</span>
+                <span class="method-start">27362 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">94995 ms</span>
+                <span class="method-start">38965 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

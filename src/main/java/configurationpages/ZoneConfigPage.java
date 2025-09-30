@@ -44,16 +44,6 @@ public class ZoneConfigPage extends TestBase {
         zonename.sendKeys(zname);
         zoneaddbtn.click();
 
-     // Wait for toaster (visible for up to 5 seconds)
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        try {
-            WebElement t = wait.until(ExpectedConditions.visibilityOf(toaster));
-            String msg = t.getText();
-            System.out.println("✅ Toaster message: " + msg);
-            return msg;
-        } catch (Exception e) {
-            System.out.println("⚠ Toaster did not appear or disappeared too quickly.");
-            return null;
-        }
+        return Testutil.getToasterMessage(driver);
     }
 }

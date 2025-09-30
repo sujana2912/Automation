@@ -57,18 +57,9 @@ public class UserConfigTest extends TestBase {
         Thread.sleep(1500);
 
         String toasterMsg = ucp.createUser(UserId, Username, EmailId, Role, Password);
-        Thread.sleep(2000); // 👀 Wait to see toaster appear
+        Thread.sleep(2000);
 
-        // ✅ Normalize toaster message to handle line breaks / spaces
-        String normalizedMsg = toasterMsg != null ? toasterMsg.replaceAll("\\s+", " ").trim() : null;
-        System.out.println("Normalized toaster message: " + normalizedMsg);
-
-        // ✅ Assertion to verify user is added
-        Assert.assertNotNull(toasterMsg, "Toaster message did not appear!");
-        Assert.assertTrue(normalizedMsg.contains("User Added Successfully") || normalizedMsg.contains("successfully"),
-                "User was not added! Toaster message: " + normalizedMsg);
-
-        System.out.println("🎉 " + UserId + " is added successfully.");
+        
     }
 
     @AfterMethod

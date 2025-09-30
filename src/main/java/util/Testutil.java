@@ -26,7 +26,7 @@ public class Testutil extends TestBase {
 
     public static final long PAGE_LOAD_TIMEOUT = 20;
     public static final long IMPLICIT_WAIT = 10;
-    public static By toasterLocator = By.id("toast-container");
+    public static final String TOASTER_XPATH = "//div[@id='toast-container']";
 
     // Excel file path (relative to project root)
     private static final String TEST_DATA_SHEET_PATH =
@@ -184,11 +184,15 @@ public class Testutil extends TestBase {
     
     //======================Toaster==============================
     
-    public static String getToasterMessage(WebDriver driver, By toasterLocator, int timeoutSeconds) {
+    public static String getToasterMessage(WebDriver driver) {
+        By toasterLocator = By.xpath(TOASTER_XPATH);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+
         try {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutSeconds));
             WebElement toaster = wait.until(ExpectedConditions.visibilityOfElementLocated(toasterLocator));
-            return toaster.getText();
+            String msg = toaster.getText().replaceAll("\\s+", " ").trim();
+            System.out.println("✅ Toaster message: " + msg);
+            return msg;
         } catch (Exception e) {
             System.out.println("⚠ Toaster did not appear or disappeared too quickly.");
             return null;

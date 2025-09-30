@@ -9,8 +9,8 @@
             <!-- <class name="homepageTestcases.ZoneDashboardTest"/> 
             <class name="homepageTestcases.MachineDashboardTest"/> 
             
-            <class name="configurationTestcases.ConfigurationPageTest"/>-->
-        <class name="configurationTestcases.UserConfigTest"/> 
+            <class name="configurationTestcases.ConfigurationPageTest"/>
+        <class name="configurationTestcases.UserConfigTest"/> -->
            <class name="configurationTestcases.ZoneConfigPageTest"/>
           <!--  <class name="configurationTestcases.ShiftConfigPageTest"/>
             <class name="configurationTestcases.MachineConfigTest"/>

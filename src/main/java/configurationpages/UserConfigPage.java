@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import base.TestBase;
+import util.Testutil;
 
 public class UserConfigPage extends TestBase {
 
@@ -64,16 +65,7 @@ public class UserConfigPage extends TestBase {
         userpwd.sendKeys(pwd);
         savebtn.click();
 
-        // Wait for toaster (visible for short time)
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        try {
-            WebElement t = wait.until(ExpectedConditions.visibilityOf(toaster));
-            String msg = t.getText();
-            System.out.println("✅ Toaster message: " + msg);
-            return msg;
-        } catch (Exception e) {
-            System.out.println("⚠ Toaster did not appear or disappeared too quickly.");
-            return null;
-        }
+        return Testutil.getToasterMessage(driver);
+        
     }
 }
