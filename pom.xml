@@ -30,7 +30,7 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
  
     <!-- TestNG -->
 <dependency>
-<groupId>org.testng</groupId>
+<groupId>org.testng</groupId> 
 <artifactId>testng</artifactId>
 <version>7.10.2</version>
 <scope>test</scope>
