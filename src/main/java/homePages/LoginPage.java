@@ -8,10 +8,10 @@ import base.TestBase;
 
 public class LoginPage extends TestBase {
 
-    @FindBy(xpath="//input[@placeholder='Username']")
+    @FindBy(xpath="//input[@placeholder='Username1']")
     WebElement username;
 
-    @FindBy(xpath="//input[@placeholder='Password']")
+    @FindBy(xpath="//input[@placeholder='Password1']")
     WebElement password;
 
     @FindBy(xpath ="//button[@class='login100-form-btn']")
