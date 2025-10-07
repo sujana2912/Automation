@@ -4,10 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 <modelVersion>4.0.0</modelVersion>
-<groupId>TestAutomationPractice</groupId>
+<groupId>TestAutomation</groupId>
 <artifactId>TestAutomation</artifactId>
 <version>0.0.1-SNAPSHOT</version>
-<name>TestAutomation</name>
+<name>TestAutomation_Jenkins</name>
 <url>http://www.example.com</url>
 <properties>
 <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -28,12 +28,12 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
 <version>5.9.2</version>
 </dependency>
  
-    <!-- TestNG -->
+    <!--  TestNG  -->
 <dependency>
-<groupId>org.testng</groupId> 
-<artifactId>testng</artifactId>
-<version>7.10.2</version>
-<scope>test</scope>
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <version>7.10.2</version>
+    <scope>compile</scope>  <!-- ✅ changed from test -->
 </dependency>
  
     <!-- Apache POI (Excel) -->

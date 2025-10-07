@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="TestAutomation" parallel="false">
+<suite name="TestAutomation_Jenkins" parallel="false">
     <test name="AllTests">
         <classes>
             <class name="homepageTestcases.LoginTest"/>
@@ -10,12 +10,11 @@
             <class name="homepageTestcases.MachineDashboardTest"/> 
             
             <class name="configurationTestcases.ConfigurationPageTest"/>
-        <class name="configurationTestcases.UserConfigTest"/> -->
+        <class name="configurationTestcases.UserConfigTest"/> 
            <class name="configurationTestcases.ZoneConfigPageTest"/>
-          <!--  <class name="configurationTestcases.ShiftConfigPageTest"/>
+          <class name="configurationTestcases.ShiftConfigPageTest"/>
             <class name="configurationTestcases.MachineConfigTest"/>
-            <class name="configurationTestcases.LoggerPageTest"/>
-            <class name="configurationTestcases.TargetpartPageTest"/> -->
+            -->
         </classes>
     </test>
 </suite>

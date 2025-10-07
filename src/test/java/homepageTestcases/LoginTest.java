@@ -59,7 +59,7 @@ public class LoginTest extends TestBase {
     @AfterClass
     public void teardown() {
         if (driver != null) {
-            driver.quit();  // close driver only once after all tests
+        	driver.quit();  // close driver only once after all tests
         }
         
     }
